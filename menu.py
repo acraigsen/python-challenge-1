@@ -179,7 +179,7 @@ while place_order:
             #Complete the order
             # Since the customer decided to stop ordering, thank them for
             # their order
-            print("Thank you for your order.")
+            print("\nThank you for your order.\n")
             break
         else:
             # Tell the customer to try again
@@ -192,6 +192,7 @@ print("This is what we are preparing for you.\n")
 # Uncomment the following line to check the structure of the order
 #print(order_list)
 
+print("==============================================")
 print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
@@ -207,10 +208,10 @@ for item in order_list:
     # 9. Create space strings
     item_spaces = " " * (26 - len(item_name))
     price_spaces = " " * (8 - (len(str(price)) + 3))
-    quantity_spaces = " " * (10 - len(str(quantity)))
+    quantity_spaces = " " * (8 - (len(str(quantity)) + 3))
 
     # 10. Print the item name, price, and quantity
-    print(f"{item_name}{item_spaces}| ${price:.2f}{price_spaces} | {quantity:d}{quantity_spaces}")
+    print(f"{item_name}{item_spaces}| ${price:.2f}{price_spaces} | {quantity_spaces}{quantity:d}")
 
 print("----------------------------------------------")
 
@@ -226,5 +227,7 @@ if(len(str(sum([item['Price'] * item['Quantity'] for item in order_list]))) > 4)
 total_spaces = " " * total_spaces_count
 
 print(f"Total: {total_spaces}${sum([item['Price'] * item['Quantity'] for item in order_list]):.2f}")
+
+print("==============================================")
 
 
